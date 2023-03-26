@@ -7,12 +7,12 @@
  * Licensed under Apache License, Version 2.0.
  */
 
-#include "brake_switch/node.hpp"
+#include "ros2_brake_switch/node.hpp"
 
-namespace brake_switch {
+namespace ros2_brake_switch {
 
 Node::Node() : rclcpp::Node::Node("brake_switch") {
   intf_ = std::make_shared<Interface>(this);
 }
 
-}  // namespace brake_switch
+}  // namespace ros2_brake_switch

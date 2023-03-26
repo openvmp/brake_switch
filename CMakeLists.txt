@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(brake_switch)
+project(ros2_brake_switch)
 
 # Compiler settings
 if(NOT CMAKE_CXX_STANDARD)
@@ -15,14 +15,14 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(switch_interface REQUIRED)
-find_package(brake REQUIRED)
+find_package(remote_switch REQUIRED)
+find_package(remote_brake REQUIRED)
 
 # Logic shared by all targets
 include_directories(
   include
-  ${switch_interface_INCLUDE_DIRS}
-  ${brake_INCLUDE_DIRS}
+  ${remote_switch_INCLUDE_DIRS}
+  ${remote_brake_INCLUDE_DIRS}
 )
 
 set(project_SOURCE_FILES
@@ -32,17 +32,17 @@ set(project_SOURCE_FILES
 
 set(project_LIBRARIES
   ${rclcpp_LIBRARIES}
-  ${switch_interface_LIBRARIES}
-  ${switch_interface_native_LIBRARIES}
-  ${brake_LIBRARIES}
-  ${brake_native_LIBRARIES}
+  ${remote_switch_LIBRARIES}
+  ${remote_switch_native_LIBRARIES}
+  ${remote_brake_LIBRARIES}
+  ${remote_brake_native_LIBRARIES}
 )
 
 set(project_DEPENDENCIES
   ament_index_cpp
   rclcpp
-  switch_interface
-  brake
+  remote_switch
+  remote_brake
 )
 
 # Executable target
@@ -59,7 +59,7 @@ add_library(${PROJECT_NAME}_native src/factory.cpp ${project_SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME}_native ${project_LIBRARIES})
 ament_target_dependencies(${PROJECT_NAME}_native ${project_DEPENDENCIES})
 ament_export_targets(${PROJECT_NAME}_native_library HAS_LIBRARY_TARGET)
-# ament_export_dependencies(${project_DEPENDENCIES} ${brake_DEPENDENCIES} ${switch_interface_DEPENDENCIES})
+# ament_export_dependencies(${project_DEPENDENCIES} ${remote_brake_DEPENDENCIES} ${remote_switch_DEPENDENCIES})
 ament_export_dependencies(${project_DEPENDENCIES})
 ament_export_include_directories(include)
 install(TARGETS

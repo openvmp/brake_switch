@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>brake_switch</name>
+  <name>ros2_brake_switch</name>
   <version>0.0.1</version>
   <description>Brake module that control a brake connected to a relay board</description>
   <maintainer email="openvmp@proton.me">Roman Kuzmenko</maintainer>
@@ -11,8 +11,8 @@
   <depend>ament_index_cpp</depend>
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
-  <depend>brake</depend>
-  <depend>switch_interface</depend>
+  <depend>remote_brake</depend>
+  <depend>remote_switch</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

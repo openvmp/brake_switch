@@ -13,29 +13,28 @@
 #include <memory>
 #include <string>
 
-#include "switch_interface/interface.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "remote_brake/interface.hpp"
+#include "remote_brake/srv/command.hpp"
+#include "remote_switch/interface.hpp"
 #include "std_msgs/msg/int32.hpp"
-#include "brake/interface.hpp"
-#include "brake/srv/command.hpp"
 
-namespace brake_switch {
+namespace ros2_brake_switch {
 
-class Interface
-    : public brake::Interface {
+class Interface : public remote_brake::Interface {
  public:
   Interface(rclcpp::Node *node);
   virtual ~Interface() {}
 
  protected:
   virtual void command_handler_real_(
-      const std::shared_ptr<brake::srv::Command::Request> request,
-      std::shared_ptr<brake::srv::Command::Response> response) override;
+      const std::shared_ptr<remote_brake::srv::Command::Request> request,
+      std::shared_ptr<remote_brake::srv::Command::Response> response) override;
 
  private:
-  std::shared_ptr<switch_interface::Interface> prov_;
+  std::shared_ptr<remote_switch::Interface> prov_;
 };
 
-}  // namespace brake_switch
+}  // namespace ros2_brake_switch
 
 #endif  // OPENVMP_BRAKE_SWITCH_INTERFACE_H

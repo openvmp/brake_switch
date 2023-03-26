@@ -7,15 +7,15 @@
  * Licensed under Apache License, Version 2.0.
  */
 
-#include "brake_switch/factory.hpp"
+#include "ros2_brake_switch/factory.hpp"
 
 #include <exception>
 
-#include "brake_switch/interface.hpp"
+#include "ros2_brake_switch/interface.hpp"
 
-namespace brake_switch {
+namespace ros2_brake_switch {
 
-std::shared_ptr<brake::Interface> Factory::New(rclcpp::Node *node) {
+std::shared_ptr<remote_brake::Interface> Factory::New(rclcpp::Node *node) {
   rclcpp::Parameter use_remote;
   if (!node->has_parameter("use_remote")) {
     node->declare_parameter("use_remote", true);
@@ -37,4 +37,4 @@ std::shared_ptr<brake::Interface> Factory::New(rclcpp::Node *node) {
   }
 }
 
-}  // namespace brake_switch
+}  // namespace ros2_brake_switch
