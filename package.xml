@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2_brake_switch</name>
+  <name>remote_brake_switch</name>
   <version>0.0.1</version>
   <description>Brake module that control a brake connected to a relay board</description>
   <maintainer email="openvmp@proton.me">Roman Kuzmenko</maintainer>

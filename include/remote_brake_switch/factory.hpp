@@ -13,15 +13,15 @@
 #include <memory>
 
 #include "rclcpp/rclcpp.hpp"
-#include "ros2_brake_switch/interface.hpp"
+#include "remote_brake_switch/interface.hpp"
 
-namespace ros2_brake_switch {
+namespace remote_brake_switch {
 
 class Factory {
  public:
   static std::shared_ptr<remote_brake::Interface> New(rclcpp::Node *node);
 };
 
-}  // namespace ros2_brake_switch
+}  // namespace remote_brake_switch
 
 #endif  // OPENVMP_BRAKE_SWITCH_FACTORY_H

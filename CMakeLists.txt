@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(ros2_brake_switch)
+project(remote_brake_switch)
 
 # Compiler settings
 if(NOT CMAKE_CXX_STANDARD)

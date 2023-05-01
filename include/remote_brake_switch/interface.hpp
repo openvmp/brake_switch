@@ -19,7 +19,7 @@
 #include "remote_switch/interface.hpp"
 #include "std_msgs/msg/int32.hpp"
 
-namespace ros2_brake_switch {
+namespace remote_brake_switch {
 
 class Interface : public remote_brake::Interface {
  public:
@@ -35,6 +35,6 @@ class Interface : public remote_brake::Interface {
   std::shared_ptr<remote_switch::Interface> prov_;
 };
 
-}  // namespace ros2_brake_switch
+}  // namespace remote_brake_switch
 
 #endif  // OPENVMP_BRAKE_SWITCH_INTERFACE_H

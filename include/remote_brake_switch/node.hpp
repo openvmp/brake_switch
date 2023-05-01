@@ -14,9 +14,9 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "ros2_brake_switch/interface.hpp"
+#include "remote_brake_switch/interface.hpp"
 
-namespace ros2_brake_switch {
+namespace remote_brake_switch {
 
 class Node : public rclcpp::Node {
  public:
@@ -26,6 +26,6 @@ class Node : public rclcpp::Node {
   std::shared_ptr<Interface> intf_;
 };
 
-}  // namespace ros2_brake_switch
+}  // namespace remote_brake_switch
 
 #endif  // OPENVMP_BRAKE_SWITCH_NODE_H

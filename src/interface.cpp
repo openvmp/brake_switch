@@ -7,12 +7,12 @@
  * Licensed under Apache License, Version 2.0.
  */
 
-#include "ros2_brake_switch/interface.hpp"
+#include "remote_brake_switch/interface.hpp"
 
+#include "remote_brake_switch/node.hpp"
 #include "remote_switch/interface_remote.hpp"
-#include "ros2_brake_switch/node.hpp"
 
-namespace ros2_brake_switch {
+namespace remote_brake_switch {
 
 Interface::Interface(rclcpp::Node *node) : remote_brake::Interface(node) {
   prov_ = std::make_shared<remote_switch::RemoteInterface>(node);
@@ -28,4 +28,4 @@ void Interface::command_handler_real_(
   prov_->switch_single_cmd(request->engage);
 }
 
-}  // namespace ros2_brake_switch
+}  // namespace remote_brake_switch

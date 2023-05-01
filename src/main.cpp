@@ -8,11 +8,11 @@
  */
 
 #include "rclcpp/rclcpp.hpp"
-#include "ros2_brake_switch/node.hpp"
+#include "remote_brake_switch/node.hpp"
 
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<ros2_brake_switch::Node>();
+  auto node = std::make_shared<remote_brake_switch::Node>();
 
   rclcpp::executors::MultiThreadedExecutor exec;
   exec.add_node(node);
